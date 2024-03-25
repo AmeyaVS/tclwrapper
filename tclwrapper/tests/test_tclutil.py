@@ -13,16 +13,16 @@ class TestTCLUtil(unittest.TestCase):
             x = tclutil.tclstring_to_nested_list(tclstring)
             self.assertEqual(x, nestedlist)
 
-        check_tclstring_to_nested_list( '' , () )
-        check_tclstring_to_nested_list( 'a' , ('a',) )
-        check_tclstring_to_nested_list( 'a b' , ('a', 'b') )
-        check_tclstring_to_nested_list( 'a b c' , ('a', 'b', 'c') )
-        check_tclstring_to_nested_list( 'abc' , ('abc',) )
-        check_tclstring_to_nested_list( '{a b} c' , (('a', 'b'), 'c') )
-        check_tclstring_to_nested_list( '{a {b c}} d' , (('a', ('b', 'c')), 'd') )
+        check_tclstring_to_nested_list( '' , [] )
+        check_tclstring_to_nested_list( 'a' , [('a',)] )
+        check_tclstring_to_nested_list( 'a b' , [('a',), ('b',)] )
+        check_tclstring_to_nested_list( 'a b c' , [('a',), ('b',), ('c',)] )
+        check_tclstring_to_nested_list( 'abc' , [('abc',)] )
+        check_tclstring_to_nested_list( '{a b} c' , [('a', 'b',), ('c',)] )
+        check_tclstring_to_nested_list( '{a {b c}} d' , [('a', 'b c'), ('d',)] )
 
         # TODO: make this work
-        # check_tclstring_to_nested_list( '{{{a} {b}}} c' , (('{a} {b}', 'c') )
+        check_tclstring_to_nested_list( '{{{a} {b}}} c' , [('{a} {b}',), ('c',)])
 
     def test_tclstring_to_nested_list_with_levels(self):
         def check_tclstring_to_nested_list_with_levels(levels, tclstring, nestedlist):
