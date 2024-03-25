@@ -1,3 +1,4 @@
+.. image:: https://github.com/AmeyaVS/tclwrapper/actions/workflows/python-package.yml/badge.svg
 .. image:: https://coveralls.io/repos/github/AmeyaVS/tclwrapper/badge.svg?branch=master
 
 
