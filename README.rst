@@ -1,3 +1,7 @@
+.. image:: https://coveralls.io/repos/github/AmeyaVS/tclwrapper/badge.svg?branch=master
+
+
+
 TCLWrapper
 ==========
 
