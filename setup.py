@@ -13,7 +13,7 @@ setup(
     version='0.1.0',
     description='Python wrapper for programs that expose a tcl interface',
     long_description=long_description,
-    url='https://github.com/csail-csg/tclwrapper',
+    url='https://github.com/AmeyaVS/tclwrapper',
     author='CSAIL CSG',
     author_email='acwright@mit.edu',
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -23,8 +23,11 @@ setup(
         'Topic :: Software Development :: Build Tools',
         'Programming Language :: Tcl',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
     ],
     keywords='TCL Wrapper tclsh wish',
     packages=find_packages(exclude=[]),
@@ -35,7 +38,7 @@ setup(
         # If we ever want to add an executable script, this is where it goes
     },
     project_urls={
-        'Bug Reports': 'https://github.com/csail-csg/tclwrapper/issues',
-        'Source': 'https://github.com/csail-csg/tclwrapper',
+        'Bug Reports': 'https://github.com/AmeyaVS/tclwrapper/issues',
+        'Source': 'https://github.com/AmeyaVS/tclwrapper',
     },
 )
