@@ -1,5 +1,6 @@
 import unittest
 import shutil
+import os
 
 from tclwrapper import tclwrapper
 
@@ -51,7 +52,7 @@ class TestTCLWrapper(unittest.TestCase):
         self.assertEqual(int(ret), 41)
         tcl.stop()
 
-    @unittest.skipIf(shutil.which('wish') is None, "test requires wish to be in the path")
+    @unittest.skipIf(shutil.which('wish') is None or os.getenv('XDG_SESSION_TYPE') in ['tty', None], "test requires wish to be in the path")
     def test_tclwrapper_wish(self):
         # this test just makes sure that tclwrapper can work with a program
         # other than tclsh
@@ -72,7 +73,7 @@ class TestTCLWrapper(unittest.TestCase):
             except:
                 self.fail('"wm withdraw ." should not raise an exception in wish')
 
-    @unittest.skipIf(shutil.which('gtkwave') is None, "test requires gtkwave to be in the path")
+    @unittest.skipIf(shutil.which('gtkwave') is None or os.getenv('XDG_SESSION_TYPE') in ['tty', None], "test requires gtkwave to be in the path")
     def test_tclwrapper_gtkwave(self):
         # gtkwave requires the -W flag to get tcl commands from stdin
         with tclwrapper.TCLWrapper('gtkwave', '-W') as tcl:
