@@ -46,7 +46,7 @@ jobs:
       uses: coverallsapp/github-action@v2
       with:
         # Put secrets.GITHUB_TOKEN here
-        github-token: ${{ github.COVERALLS_REPO_TOKEN }} # optional, default is ${{ github.token }}
+        github-token: ${{ github.token }} # optional, default is ${{ github.token }}
         # Path to lcov file [DEPRECATED]
         path-to-lcov: # optional
         # Coverage file
